@@ -413,8 +413,7 @@ import SignOut from './SignOut';
 				   </Link>
 				 </li>
 				 
-				 {user ? (
-					<>
+				 
 					<li className="pb-6 text-xl text-black py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
 				   <Link href="/profile" onClick={() => setNavbar(!navbar)}>
 					 Profile
@@ -429,15 +428,15 @@ import SignOut from './SignOut';
 											<Link href="/" onClick={() => setNavbar(!navbar)}>
 												<SignOut />
 											</Link>
-										</li></>
-				 ) : (
+										</li>
+				 
 					<li className="pb-6 text-xl text-black py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
 				   <Link href="/auth/signin" onClick={() => setNavbar(!navbar)}>
 					 SignIn
 				   </Link>
 				 </li>
 
-				 ) }
+				
 				 
 			   </ul>
 			 </div>

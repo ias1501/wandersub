@@ -1,0 +1,42 @@
+/* .navcontainer{
+    position: fixed;
+    width:200px ;
+    height: 100%;
+    background-image: url("https://img.freepik.com/free-vector/gradient-tech-futuristic-background_52683-74568.jpg?w=996&t=st=1692119838~exp=1692120438~hmac=7f4b76a60cdd3266a59559f290d634ef65fc6631d13bd77b81e47772f4b52dac");
+    box-shadow: 3px 0px 6px rgba(246,246,246,0.75);
+}
+
+.wrapper{
+    padding: 10px;
+    z-index:1;
+}
+
+.logo{
+    padding: 10px;
+    padding-left: 10px;
+    text-align: left;
+   
+    font-size:10px;
+    font-weight: bold;
+}
+
+.wrapper>ul {
+    margin-top:20px;
+    text-align:left ;
+    padding-left:10px;
+    display:flex;
+    flex-direction: column;
+    font-size:18px ;
+    font-weight:bold;
+}
+
+.wrapper>ul>li {
+    list-style-type: style none;
+    font-size: 20px;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.wrapper>ul>li>a:hover{
+    color:darkgoldenrod
+} */
