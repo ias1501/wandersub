@@ -148,6 +148,7 @@ const SignIn = () => {
            <button
         className="border-2 border-white text-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-200 hover:text-black"
         type="button"
+       
         onClick={() => setView(VIEWS.SIGN_UP)}
       >
          Sign Up.

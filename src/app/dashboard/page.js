@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import "./dashboard.css";
+
 import { FaHome, FaIcons } from 'react-icons/fa';
 import { useState } from "react";
 import Link from "next/link";
