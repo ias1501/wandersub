@@ -198,14 +198,17 @@ const SignUp = () => {
          <h2 className="text-3xl text-white font-bold mb-2">Hello,User!</h2>
          <div className="border-2 w-10 border-black inline-block mb-2"> </div>
          <p className=" text-white mb-10">If already created an account then SignIn</p>
-         <button
+         {/* <button
       className="border-2 border-white text-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-200 hover:text-black"
       type="button"
+      
       onClick={() => setView(VIEWS.SIGN_IN)}
     >
        Sign In.
-    </button>
-       
+    </button> */}
+    <a href="/auth/signin" className="border-2 border-white text-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-200 hover:text-black">
+            SignIn
+            </a>
           </div>
         {/* <h2 className="w-full text-center">Sign In</h2>
     <Formik

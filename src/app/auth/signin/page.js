@@ -1,4 +1,4 @@
-import SignIn from '../../../components/components/Auth/SignIn';
+import SignIn from '@/components/components/Auth/SignIn';
 import Link from 'next/link'
 import { redirect } from 'next/navigation';
 import React from 'react'

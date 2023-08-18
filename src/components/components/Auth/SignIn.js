@@ -31,7 +31,7 @@ const SignIn = () => {
       setErrorMsg(error.message);
     }
   }
-
+  
   return (
     <div className=" min-h-screen flex felx-col justify-center items-center py-2">
 
@@ -145,14 +145,18 @@ const SignIn = () => {
            <h2 className="text-3xl text-white font-bold mb-2">Hello,User!</h2>
            <div className="border-2 w-10 border-black inline-block mb-2"> </div>
            <p className=" text-white mb-10">Fill some personal information and start your journey with us!</p>
-           <button
+          
+           {/* <button
         className="border-2 border-white text-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-200 hover:text-black"
         type="button"
        
         onClick={() => setView(VIEWS.SIGN_UP)}
       >
          Sign Up.
-      </button>
+      </button> */}
+       <a href="/auth/signup" className="border-2 border-white text-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-200 hover:text-black">
+            SignUp
+            </a>
          
             </div>
           {/* <h2 className="w-full text-center">Sign In</h2>
