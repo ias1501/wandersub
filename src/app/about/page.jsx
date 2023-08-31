@@ -7,8 +7,8 @@ import Footer from '@/components/components/Footer';
 
 const teamMembers = [
   { name: 'Isha Shah', role: 'CEO', imageSrc: 'assets/Isha.jpg' },
-  { name: 'Isha Shah', role: 'CEO', imageSrc: 'assets/Isha.jpg' },
-  { name: 'Isha Shah', role: 'CEO', imageSrc: 'assets/Isha.jpg' },
+  { name: 'Sayandeeep Nayak', role: 'CEO', imageSrc: 'assets/image 2.png' },
+  { name: 'Dev Jhamtani', role: 'CEO', imageSrc: 'assets/IMG-20230201-WA0000.jpg' },
   { name: 'Isha Shah', role: 'CEO', imageSrc: 'assets/Isha.jpg' },
   { name: 'Isha Shah', role: 'CEO', imageSrc: 'assets/Isha.jpg' },
   // Add more team members here

@@ -56,7 +56,7 @@ export default function Home() {
 			</div> */}
             
 		</div>
-		<div className="bg-sea3 min-h-screen bg-no-repeat bg-center bg-fixed bg-cover">
+		<div className="bg-sea4 min-h-screen bg-no-repeat bg-center bg-fixed bg-cover ">
 		
 		</div>
 		<Footer/>
