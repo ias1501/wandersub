@@ -1,10 +1,13 @@
 "use client"
 import React from 'react';
-
+import { useEffect, useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import { FaHome, FaIcons } from 'react-icons/fa';
-import { useState } from "react";
+import "../dashboard/Dashboard.css"
 import Link from "next/link";
-
+const supabaseUrl = 'https://mhxkwiphkvdpmlcdczhh.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oeGt3aXBoa3ZkcG1sY2RjemhoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4NzU3MTcsImV4cCI6MjAwNjQ1MTcxN30.koHBGPS4ZJpiyrET5D4Vwk3b6oUenEQHzcsIl9g1Egw';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 //     <div class="sidebar">
 //   <div class="brand">
@@ -99,13 +102,30 @@ import Link from "next/link";
 const Dashboard = () => {
 
   const [open, setOpen] = useState(false);
+  const [data, setData] = useState([]);
+  const [columns, setColumns] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const { data, error } = await supabase.from('parameters').select('*');
+      if (error) {
+        console.error('Error fetching data:', error);
+      } else {
+        setData(data);
+        // Assuming columns are the same across all data rows
+        setColumns(Object.keys(data[0] || {}));
+      }
+    }
+
+    fetchData();
+  }, []);
   return (
-    <div className="flex-row lg:flex">
+    <div className="flex flex-col lg:flex-row">
       <div
-        className={` ${
-          open ? "lg:w-40" : "lg:w-60 "
-        } flex flex-col lg:h-screen p-3 w-full bg-gray-800 shadow duration-300 bg-sea1`}
-      >
+    className={`${
+      open ? "lg:w-40" : "lg:w-60"
+    } flex flex-col lg:h-screen p-3 w-full bg-gray-800 shadow duration-300 bg-sea1`}
+  >
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold text-white">Dashboard</h2>
@@ -286,7 +306,7 @@ const Dashboard = () => {
                       d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                     />
                   </svg>
-                  <span className="text-gray-100">Orders</span>
+                  <span className="text-gray-100">Temperature</span>
                 </Link>
               </li>
               <li className="rounded-sm">
@@ -342,12 +362,46 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      
       <div className="container mx-auto mt-4 lg:mt-12 ">
         <div className="p-4 mx-2 shadow-sm">
+        
           <p>Add Dashboard Analytics </p>
+          <div className="dashboard-container">
+      <h1>Your Dashboard</h1>
+     
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              {columns.map(column => (
+                <th key={column}>{column}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map(item => (
+              <tr key={item.id}>
+                {columns.map(column => (
+                  <td key={column}>{item[column]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="lines-container">
+          {/* Vertical line */}
+          <div className="vertical-line"></div>
+          {/* Horizontal line */}
+          <div className="horizontal-line"></div>
         </div>
       </div>
     </div>
+        </div>
+      </div>
+      </div>
+     
+   
   );
 }
  

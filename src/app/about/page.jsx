@@ -19,14 +19,14 @@ const About = () => {
 
   return (
     
-    <div className="flex flex-col min-h-screen ">
+    <div className="flex flex-col min-h-screen  ">
       {/* Navbar */}
       <nav className=" p-4">
        <NavBar/>
       </nav>
 
            {/* Our Story Section */}
-      <section className=" flex-grow flex items-center justify-center " >
+      <section className=" flex-grow flex items-center justify-center bg-pink-100" >
         <div className="max-w-7xl mx-auto px-8 md:px-8 lg:px-16 xl:px-20 text-center">
           <h2 className=" mt-10 text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
           <p className="text-gray-700 md:text-lg">
@@ -38,7 +38,7 @@ const About = () => {
       </section>
 
       {/* Team Member Cards */}
-      <section className=" flex-grow py-16">
+      <section className=" flex-grow py-16 ">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 flex justify-center items-center">Meet Our Team</h2>
       <p className="text-2xl md:text-4xl font-semibold mb-8 flex justify-center items-center">The members who worked hard to bring this project to life.</p>
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 xl:px-20 ">
