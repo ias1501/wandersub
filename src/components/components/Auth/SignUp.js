@@ -89,9 +89,9 @@ const SignUp = () => {
 
     <div className=" min-h-screen flex felx-col justify-center items-center py-2">
 
-    <main className='flex flex-col items-center justify-center w-full flex-1 px-20 text-center'>
+<main className='flex flex-col items-center justify-center w-full flex-1 px-4 sm:px-6 lg:px-8 text-center'>
       <div className="bg-white rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
-        <div className='w-3/5 p-5'>
+      <div className='w-full sm:w-1/2 p-5'>
          <div className="text-left font-bold">
           Wander<span className="text-blue-500">Sub</span>
          </div>

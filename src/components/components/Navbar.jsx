@@ -401,15 +401,15 @@ import SignOut from './SignOut';
 			 >
 			   <ul className="h-screen md:h-auto items-center justify-center md:flex ">
 				 <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
-				   <Link href="/about" onClick={() => setNavbar(!navbar)}>
-					 AboutUs
+				   <Link href="/dashboard" onClick={() => setNavbar(!navbar)}>
+					 Dashboard
 				   </Link>
 				 </li>
 				 
 				 
 				 <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
-				   <Link href="/Contact" onClick={() => setNavbar(!navbar)}>
-					 ContactUs
+				   <Link href="/about" onClick={() => setNavbar(!navbar)}>
+					 AboutUs
 				   </Link>
 				 </li>
 				 
@@ -425,8 +425,8 @@ import SignOut from './SignOut';
 				   </Link>
 				 </li>
 				 <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
-										<Link href="/dashboard" onClick={() => setNavbar(!navbar)}>
-											Dashboard
+										<Link href="/Contact" onClick={() => setNavbar(!navbar)}>
+											ContactUS
 										</Link>
 									</li>
 									<li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">

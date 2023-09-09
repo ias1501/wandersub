@@ -1,0 +1,16 @@
+/* styles/Features.module.css */
+.features-section {
+    text-align: center;
+    padding: 50px;
+  }
+  
+.ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+.li {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  

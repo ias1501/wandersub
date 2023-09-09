@@ -8,17 +8,17 @@ export default function Footer(){
     return(
       
     <div className="bg-white h-5 w-full flex md:flex-row flex-col justify-around itens-start p-20" >
-        <div className="p-5">
+        <div className="p-0">
         
           <ul>
-          <div className="flex gap-6 pb-5 items-top  shadow-xl bg-transparent">
+          <div className="flex gap-6 pb-5 items-top  shadow-xl bg-transparent ">
                 {/* Section for icons */}
                 <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600"/>
                 <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600"/>
                 <FaLinkedinIn className="text-2xl cursor-pointer hover:text-blue-600"/>
                 <FaYoutube className="text-2xl cursor-pointer hover:text-red-600"/>
             </div>
-            <p className="text-gray-800  font-bold text-3xl pb-1">
+            <p className="text-gray-800  font-bold text-3xl my-1 ">
                 Wander <span className="text-blue-600">Sub</span>
             </p>
           

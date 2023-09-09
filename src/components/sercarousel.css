@@ -1,9 +1,10 @@
 .slide {
-    flex: 0 0 100%; /* Make each slide occupy the container's width */
+    flex: 0 0 20%; /* Make each slide occupy the container's width */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    
   }
   .slide-content {
     flex: 1;

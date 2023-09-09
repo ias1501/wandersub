@@ -1,0 +1,8 @@
+/* styles/Submarine.module.css */
+.submarine {
+    width: 100px;
+    height: 100px;
+    background-color: #0077b6;
+    position: absolute;
+  }
+  

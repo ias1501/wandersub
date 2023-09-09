@@ -19,14 +19,14 @@ const About = () => {
 
   return (
     
-    <div className="flex flex-col min-h-screen  ">
+    <div className="flex flex-col min-h-screen bg-aboutus bg-cover bg-no repeat ">
       {/* Navbar */}
       <nav className=" p-4">
        <NavBar/>
       </nav>
 
            {/* Our Story Section */}
-      <section className=" flex-grow flex items-center justify-center bg-pink-100" >
+      <section className=" flex-grow flex items-center justify-center " >
         <div className="max-w-7xl mx-auto px-8 md:px-8 lg:px-16 xl:px-20 text-center">
           <h2 className=" mt-10 text-3xl md:text-4xl font-bold mb-4">Our Story</h2>
           <p className="text-gray-700 md:text-lg">
