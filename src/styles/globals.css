@@ -6,13 +6,16 @@
   h2 {
     @apply py-4 text-4xl font-black text-gray-800;
   }
-
-  /* .button {
-    @apply custom-focus rounded-full border-2 border-black-400 bg-white px-8 py-2 font-bold text-green-400 hover:bg-green-400 hover:text-white focus:bg-green-400 focus:text-white;
-  } */
+  .bg-opacity-60 {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .button {
+    @apply custom-focus rounded-full border-2 border-blue-400 bg-white px-8 py-2 font-bold text-blue-400 hover:bg-blue-400 hover:text-white focus:bg-blue-400 focus:text-white;
+  }
 
   .button-inverse {
-    @apply custom-focus rounded-full border-2 border-white bg-green-400 px-8 py-2 font-bold text-white hover:border-green-400 hover:bg-white hover:text-green-400 focus:border-green-400 focus:bg-white focus:text-green-400;
+    @apply custom-focus rounded-full border-2 border-white bg-blue-400 px-8 py-2 font-bold text-white hover:border-blue-400 hover:bg-white hover:text-blue-400 focus:border-blue-400 focus:bg-white focus:text-blue-400;
   }
 
   .card {
@@ -24,7 +27,7 @@
   }
 
   .custom-focus {
-    @apply focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2;
+    @apply focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2;
   }
 
   .heading {
@@ -44,27 +47,66 @@
   }
 
   .link {
-    @apply custom-focus rounded-md font-semibold text-green-400;
+    @apply custom-focus rounded-md font-semibold text-blue-400;
   }
 
   .row {
     @apply flex flex-row items-center justify-start gap-1;
   }
-  
-}
-/* html,
-body{
-  background:rgb(245,245, 245);
-  width:100%;
-  height: 100%;
-}
-a{
-  color:inherit;
-  text-decoration:none;
 
+
+
+.btn {
+    @apply bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200;
 }
-*{
-  margin: 0;
-  padding:0;
-  box-sizing:border-box;
-} */
+.card_btn {
+    @apply w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200;
+}
+.title {
+    @apply text-3xl md:text-4xl font-bold leading-snug;
+}
+.blob1 {
+    @apply w-80 h-80 bg-color-blob absolute top-0 -left-5 -z-10 blur-xl opacity-20 overflow-hidden rounded-full;
+}
+.blob2 {
+    @apply w-80 h-80 bg-color-secondary absolute bottom-10 right-0 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full;
+}
+.user-text {
+    display: none;
+}
+.user-text.active-text {
+    display: block;
+    animation: moveup 1s linear forwards;
+}
+.user-pic {
+    transition: all 0.2s ease;
+}
+.user-pic.active-pic {
+    border: 2px solid #4a6aaa;
+}
+@keyframes moveup {
+    0% {
+        margin-top: 40px;
+        opacity: 0;
+    }
+    50% {
+        margin-top: 20px;
+        opacity: 0.1;
+    }
+    100% {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+.card {
+    perspective: 1000px;
+}
+.front,
+.back {
+    backface-visibility: hidden;
+    transition: all 0.4s ease;
+}
+.front {
+    overflow: hidden;
+}
+}

@@ -8,7 +8,7 @@
 // //    )
 
 // //     return (
-// //         <nav className="fixed w-full h-24 shadow-xl bg-white">
+// //         <nav className="fixed w-full h-24 shadow-xl bg-transparent">
 // //             <div className="flex justify-between items-centre h-full w-full px-4 2xl:px-16">
 // //               <Image
 // //               src={logo}
@@ -183,7 +183,7 @@
 // 						<div className="md:hidden" id="mobile-menu">
 // 							<div
 // 								ref={ref}
-// 								className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
+// 								className="bg-transparent px-2 pt-2 pb-3 space-y-1 sm:px-3"
 // 							>
 // 								<Link
 // 									href="/home"
@@ -354,15 +354,126 @@ import SignOut from './SignOut';
 	
 	const [navbar, setNavbar] = useState(false);
     const { initial, user, view, signOut } = useAuth();
-
+	function toggleMobileMenu() {
+		const menu = document.querySelector('#menu');
+		const faSolid = document.querySelector(".fa-solid");
+	
+		menu.classList.toggle('hidden');
+		faSolid.classList.toggle('fa-xmark');
+	  }
 	return (
 	 <div>
-	   <nav className="w-full  fixed top-0 left-0 right-0 z-10 h-20 shadow-xl bg-white ">
+		 <nav className="container flex justify-between items-center">
+          <div className="py-5 text-color-secondary font-bold text-3xl">
+            <a href="#home">
+              <span className="text-color-white">Wander</span>Sub.
+            </a>
+          </div>
+          <div>
+            <ul className="hidden lg:flex items-center space-x-6">
+              <li>
+			  <Link href="/dashboard" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
+					 Dashboard
+				   </Link>
+              </li>
+              <li>
+              <Link href="#about" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
+					 Team
+ 				   </Link>
+              </li>
+              <li>
+              <Link href="#services" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
+ 					 Services
+ 				   </Link>
+              </li>
+              <li>
+              <Link href="#contactus" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
+					 Contactus
+ 				   </Link>
+              </li>
+              
+              <li>
+                <button className="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200">
+                  Login
+                </button>
+              </li>
+            </ul>
+          </div>
+          {/* Mobile screen */}
+          <div id="hamburger" className="lg:hidden cursor-pointer z-50" onClick={toggleMobileMenu}>
+            <i className="fa-solid fa-bars" />
+          </div>
+          <div
+            id="menu"
+            className="hidden bg-color-primary-dark h-[100vh] absolute inset-0"
+          >
+            <ul className="h-full grid place-items-center py-20">
+              <li>
+                <a
+                  id="hLink"
+                  href="#home"
+                  className="hover:text-color-secondary ease-in duration-200"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  id="hLink"
+                  href="#features"
+                  className="hover:text-color-secondary ease-in duration-200"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  id="hLink"
+                  href="#testimonial"
+                  className="hover:text-color-secondary ease-in duration-200"
+                >
+                  Testimonial
+                </a>
+              </li>
+              <li>
+                <a
+                  id="hLink"
+                  href="#pricing"
+                  className="hover:text-color-secondary ease-in duration-200"
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a
+                  id="hLink"
+                  href="#blog"
+                  className="hover:text-color-secondary ease-in duration-200"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  id="hLink"
+                  href="#contact"
+                  className="hover:text-color-secondary ease-in duration-200"
+                >
+                  Contact
+                </a>
+              </li>
+              <li>
+                <button className="btn">free trial</button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+	   {/* <nav className="w-full  fixed top-0 left-0 right-0 z-10 h-20 shadow-xl bg-transparent ">
 		 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
 		   <div>
-			 <div className="flex items-center justify-between py-3 md:py-5 md:block">
+			 <div className="flex items-center justify-between py-3 md:py-5 md:block"> */}
 			   {/* LOGO */}
-			   <Link href="/">
+			   {/* <Link href="/">
 			                  <Image
               src={logo}
               alt="Logo"
@@ -372,8 +483,9 @@ import SignOut from './SignOut';
               priority
               />
 			   </Link>
+			   <h1>Wandersub</h1> */}
 			   {/* HAMBURGER BUTTON FOR MOBILE */}
-			   <div className="md:hidden">
+			   {/* <div className="md:hidden">
 				 <button
 				   className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
 				   onClick={() => setNavbar(!navbar)}
@@ -389,65 +501,65 @@ import SignOut from './SignOut';
 					   className="focus:border-none active:border-none"
 					 />
 				   )}
-				 </button>
-			   </div>
+				 </button> */}
+			   {/* </div>
 			 </div>
 		   </div>
-		   <div>
-			 <div
+		   <div> */}
+			 {/* <div
 			   className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
 				 navbar ? 'p-12 md:p-0 block' : 'hidden'
 			   }`}
 			 >
 			   <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-				 <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
+				 <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-black md:hover:bg-transparent">
 				   <Link href="/dashboard" onClick={() => setNavbar(!navbar)}>
 					 Dashboard
 				   </Link>
 				 </li>
+				  */}
 				 
-				 
-				 <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
+				 {/* <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-black md:hover:bg-transparent">
 				   <Link href="/about" onClick={() => setNavbar(!navbar)}>
 					 AboutUs
 				   </Link>
 				 </li>
 				 
 				 
-				 <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
+				 <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-black md:hover:bg-transparent">
 				   <Link href="/profile" onClick={() => setNavbar(!navbar)}>
 					 Profile
 				   </Link>
 				   </li>
-				   <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
+				   <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-black md:hover:bg-transparent">
 				   <Link href="/services" onClick={() => setNavbar(!navbar)}>
 					 Services
 				   </Link>
 				 </li>
-				 <li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
+				 <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-black md:hover:bg-transparent">
 										<Link href="/Contact" onClick={() => setNavbar(!navbar)}>
 											ContactUS
 										</Link>
 									</li>
-									<li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
+									<li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-black md:hover:bg-transparent">
 											<Link href="/" onClick={() => setNavbar(!navbar)}>
 												<SignOut />
 											</Link>
 										</li>
 				 
-										<li className="pb-6 text-xl text-black py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-gray-600 md:hover:bg-white">
+										<li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-gray-400  border-gray-500  md:hover:text-black md:hover:bg-transparent">
 				   <Link href="/auth/signin" onClick={() => setNavbar(!navbar)}>
 					 SignIn
 				   </Link>
-				 </li>
+				 </li> */}
 
 				
 				 
-			   </ul>
+			   {/* </ul>
 			 </div>
 		   </div>
 		 </div>
-	   </nav>
+	   </nav> */}
 	 </div>
    );
  }

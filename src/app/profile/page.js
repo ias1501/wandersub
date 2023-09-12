@@ -8,9 +8,7 @@ export default async function Profile() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    redirect('/');
-  }
+  
 
   return (
     <div className="card">

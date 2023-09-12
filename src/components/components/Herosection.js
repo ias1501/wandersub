@@ -85,78 +85,78 @@
 
 
 // components/HeroSection.js
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
-const HeroSection = () => {
-  useEffect(() => {
-    // Scroll-triggered animations
-    gsap.registerPlugin(ScrollTrigger);
+// import { useEffect } from 'react';
+// import { gsap } from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
+// const HeroSection = () => {
+//   useEffect(() => {
+//     // Scroll-triggered animations
+//     gsap.registerPlugin(ScrollTrigger);
 
-    // Animation for the submarine image
-    gsap.fromTo(
-      '.submarine-img',
-      { y: '100%' },
-      { y: '0%', duration: 1, ease: 'power2.inOut', scrollTrigger: '.submarine-img' }
-    );
+//     // Animation for the submarine image
+//     gsap.fromTo(
+//       '.submarine-img',
+//       { y: '100%' },
+//       { y: '0%', duration: 1, ease: 'power2.inOut', scrollTrigger: '.submarine-img' }
+//     );
 
-    // Animation for the feature containers
-    const featureContainers = document.querySelectorAll('.feature-container');
-    featureContainers.forEach((container, index) => {
-      gsap.fromTo(
-        container,
-        { opacity: 0, y: '20px' },
-        {
-          opacity: 1,
-          y: '0',
-          duration: 1,
-          ease: 'power2.inOut',
-          scrollTrigger: {
-            trigger: container,
-            start: 'top 80%', // Adjust this value to control when the animation triggers
-          },
-        }
-      );
-    });
-  }, []);
+//     // Animation for the feature containers
+//     const featureContainers = document.querySelectorAll('.feature-container');
+//     featureContainers.forEach((container, index) => {
+//       gsap.fromTo(
+//         container,
+//         { opacity: 0, y: '20px' },
+//         {
+//           opacity: 1,
+//           y: '0',
+//           duration: 1,
+//           ease: 'power2.inOut',
+//           scrollTrigger: {
+//             trigger: container,
+//             start: 'top 80%', // Adjust this value to control when the animation triggers
+//           },
+//         }
+//       );
+//     });
+//   }, []);
 
-  return (
-    <section className="bg-sea4 bg-cover bg-no repeat text-white h-screen flex flex-col justify-center items-center relative">
-      <img
-        src="/subimage.png"
-        alt="Submarine"
-        className="w-40 h-40 animate-float submarine-img"
-      />
-      <div className="mt-6 text-center relative">
-        {/* <h1 className="text-4xl font-bold">Welcome to Our Company</h1> */}
-        <div className="feature-container opacity-0 mt-2">
-          <p>Feature 1: Description</p>
-        </div>
-        <div className="feature-container opacity-0 mt-2">
-          <p>Feature 2: Description</p>
-        </div>
-        <div className="feature-container opacity-0 mt-2">
-          <p>Feature 3: Description</p>
-        </div>
-        <div className="feature-container opacity-0 mt-2">
-          <p>Feature 4: Description</p>
-        </div>
-        <div className="feature-container opacity-0 mt-2">
-          <p>Feature 5: Description</p>
-        </div>
-      </div>
-    </section>
-  );
-};
+//   return (
+//     <section className="bg-sea4 bg-cover bg-no repeat text-white h-screen flex flex-col justify-center items-center relative">
+//       <img
+//         src="/subimage.png"
+//         alt="Submarine"
+//         className="w-40 h-40 animate-float submarine-img"
+//       />
+//       <div className="mt-6 text-center relative">
+//         {/* <h1 className="text-4xl font-bold">Welcome to Our Company</h1> */}
+//         <div className="feature-container opacity-0 mt-2">
+//           <p>Feature 1: Description</p>
+//         </div>
+//         <div className="feature-container opacity-0 mt-2">
+//           <p>Feature 2: Description</p>
+//         </div>
+//         <div className="feature-container opacity-0 mt-2">
+//           <p>Feature 3: Description</p>
+//         </div>
+//         <div className="feature-container opacity-0 mt-2">
+//           <p>Feature 4: Description</p>
+//         </div>
+//         <div className="feature-container opacity-0 mt-2">
+//           <p>Feature 5: Description</p>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
-export default HeroSection;
+// export default HeroSection;
 
 
 
 
 // import Head from "next/head";
-// // import HeroSection from "components/HeroSection";
-// // import Navbar from "components/Navbar";
+// import HeroSection from "components/HeroSection";
+// import Navbar from "components/Navbar";
 // import React from "react";
 // import Link from "next/link";
 
@@ -172,7 +172,7 @@ export default HeroSection;
 // 			{/* <Navbar /> */}
 			
 			 
-// 			<h1 className="text-center font-bold lg:text-4xl text-4xl space-y-2">WanderSub</h1>
+			
 // 		</div>
 // 		<div className="p-10">
 // 			<h2 className="font-bold text-4xl" >Misssion</h2>
@@ -183,36 +183,36 @@ export default HeroSection;
 // 		<div className="bg-sea2 min-h-screen bg-center bg-no-repeat bg-cover bg-fixed">
 
 // 		</div>
-// 		<div className="min-h-screen px-8 py-16 bg-black">
-// 			<h1 className="text-4xl pb-10 text-white">
-// 				 UnderwaterROV...
-// 			</h1>
+		{/* <div className="min-h-screen px-8 py-16 bg-black">
+			<h1 className="text-4xl pb-10 text-white">
+				 UnderwaterROV...
+			</h1>
             
-// 				<div className="min-h-screen px-8 py-16">
+				<div className="min-h-screen px-8 py-16">
 
-// 				</div>
-//            <div className="grid gap-8 items-start justify-center">
-// 			<div className="relative group">
-// 				<div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg blur opacity-75 group-hover: opacity-500 transition duration-1000 group-hover:duration-200">
+				</div> */}
+           {/* <div className="grid gap-8 items-start justify-center">
+			<div className="relative group">
+				<div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg blur opacity-75 group-hover: opacity-500 transition duration-1000 group-hover:duration-200">
 
-// 				</div>
+				</div>
 
-// 				<Link href="../pages/signin">
-// 			<button className=" relative px-7 py-4 bg-black rounded-lg leading-none flex items-center space-x-5">
-// 				<span className="text-gray-100 text-5xl group-hover:text-blue-500 transition duration-200">Let's start 🚀</span>
+				<Link href="../pages/signin">
+			<button className=" relative px-7 py-4 bg-black rounded-lg leading-none flex items-center space-x-5">
+				<span className="text-gray-100 text-5xl group-hover:text-blue-500 transition duration-200">Let's start 🚀</span>
 
-// 			</button>
-// 			</Link>
-// 			</div>
-// 		   </div>
-// 			{/* <div className="flex justify-center items-center cursor-pointer hover:shadow-lg  text-3xl font-semibold text-white bg-gray-900 rounded-lg w-64 h-16">
-// 				<h1 className="text-center">Let's start 🚀 </h1>
-// 			</div> */}
+			</button>
+			</Link>
+			</div>
+		   </div> */}
+			{/* <div className="flex justify-center items-center cursor-pointer hover:shadow-lg  text-3xl font-semibold text-white bg-gray-900 rounded-lg w-64 h-16">
+				<h1 className="text-center">Let's start 🚀 </h1>
+			</div> */}
             
-// 		</div>
-// 		<div className="bg-sea2 min-h-screen bg-no-repeat bg-center bg-fixed bg-cover">
+		{/* </div> */}
+		{/* <div className="bg-sea3 min-h-screen bg-no-repeat bg-center bg-fixed bg-cover">
 
-// 		</div>
+		</div> */}
 // 		</>
 // 	);
 // };
