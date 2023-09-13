@@ -348,6 +348,7 @@
  import logo from "public/logo.jpg";
  import { useAuth } from "./AuthProvider";
 import SignOut from './SignOut';
+import "./nav.css";
 
  function NavBar() {
  
@@ -363,7 +364,7 @@ import SignOut from './SignOut';
 	  }
 	return (
 	 <div>
-		 <nav className="container flex justify-between items-center">
+		 <nav className=" nav container flex justify-between items-center">
           <div className="py-5 text-color-secondary font-bold text-3xl">
             <a href="#home">
               <span className="text-color-white">Wander</span>Sub.

@@ -324,7 +324,7 @@
 // export default Hero2;
 
 "use client"
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './hero3.css';
@@ -333,35 +333,52 @@ import logo from '../../public/SAVE_20230909_205709-removebg-preview.png';
 import Image from 'next/image';
 import Footer from '@/components/components/Footer';
 import { FaFacebook, FaDiscord, FaTwitter, FaGithub, FaDribbble } from 'react-icons/fa';
+import ImageDescription from '@/components/components/productcomponent1';
+
+import ProductComponent from '@/components/components/productcomponent2';
+import ProductComponent1 from '@/components/components/productcomponent1';
 const Hero3 = () => {
   useEffect(() => {
       // Initialize GSAP and ScrollTrigger
       gsap.registerPlugin(ScrollTrigger);
+      const missionVisionTimeline = gsap.timeline();
 
-      // Set initial properties for photos
-      gsap.set(".photo:not(:first-child)", { opacity: 0, scale: 0.5 });
-     
-      // Create GSAP animation
-      const animation = gsap.to(".photo:not(:first-child)", {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        stagger: 1
-      });
-      
+      // Select all the word elements in the mission section
+      const missionWords = document.querySelectorAll('.mission-section span');
   
-      // Create ScrollTrigger
-      ScrollTrigger.create({
-        trigger: ".gallery",
-        start: "top top",
-        end: "bottom bottom",
-        pin: ".right",
-        animation: animation,
-        scrub: true,
-        markers: false
+      // Select all the word elements in the vision section
+      const visionWords = document.querySelectorAll('.vision-section span');
+  
+      // Add animations for mission words
+      missionWords.forEach((word, index) => {
+        missionVisionTimeline.from(word, {
+          opacity: 0,
+          duration: 0.1,
+          delay: index * 0.02, // Adjust delay to control word-by-word timing
+          ease: 'power1.inOut',
+        });
       });
-      
-  }, []);
+  
+      // Add animations for vision words
+      visionWords.forEach((word, index) => {
+        missionVisionTimeline.from(word, {
+          opacity: 0,
+          duration: 0.1,
+          delay: index * 0.02, // Adjust delay to control word-by-word timing
+          ease: 'power1.inOut',
+        });
+      });
+  
+      // Create ScrollTrigger for the mission and vision section
+      ScrollTrigger.create({
+        trigger: '.mission-vision-section',
+        start: 'top center',
+        end: 'bottom center',
+        animation: missionVisionTimeline,
+        scrub: true,
+        markers: false,
+      });
+    }, []);
   const socialMediaLinks = [
     { icon: <FaFacebook />, url: '#' },
     { icon: <FaDiscord />, url: '#' },
@@ -369,10 +386,33 @@ const Hero3 = () => {
     { icon: <FaGithub />, url: '#' },
     { icon: <FaDribbble />, url: '#' }
   ];
+  const imageData = [
+    { imageSrc: '/assets/rov1.jpg', description: '5 Degrees of Freedom' },
+    { imageSrc: "https://media.istockphoto.com/id/1585551839/photo/li-fi-w-lan-internet-and-network-technology-enable-high-speed-li-fi-connections.webp?b=1&s=170667a&w=0&k=20&c=ValsNHHKcdyHykU_q6g0f0dVFqoS0nZFutlC8k8Hhsw=", description: '3 Ways of Communication' },
+    { imageSrc: "https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN1Ym1hcmluZXMlMjBzbWFsbCUyMHVuZGVyd2F0ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", description: 'Relative Mapping of Underwater Objects' },
+    { imageSrc: "https://media.istockphoto.com/id/1499815056/photo/a-tourist-submarine-has-gone-missing-in-the-north-atlantic-mini-manned-submarine-to-explore.webp?b=1&s=170667a&w=0&k=20&c=aOFE0Ib9CQFwbmg47D3nwbfgnxwY3nHqvHl7wrH0NPE=", description: 'Description for Image 3 goes here.' },
+    { imageSrc: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW50ZWdyYXRlZCUyMGNvbnRyb2wlMjBzb2Z0d2FyZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60", description: 'Description for Image 3 goes here.' },
+    { imageSrc: "https://images.unsplash.com/photo-1439405326854-014607f694d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGl2ZSUyMHZlZGlvJTIwc3RyZWFtaW5nJTIwb2YlMjB3YXRlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60", description: 'Description for Image 3 goes here.' },
+    { imageSrc: "/dl.jpg", description: 'Description for Image 3 goes here.' },
+    // Add more image data as needed
+  ];
+  const missionRef = useRef(null);
+  const visionRef = useRef(null);
+  const [fadeIn, setFadeIn] = useState(false);
 
+  useEffect(() => {
+    // Use a setTimeout to delay the fade-in effect for demonstration purposes
+    const delay = setTimeout(() => {
+      setFadeIn(true);
+      clearTimeout(delay);
+    }, 500); // You can adjust the delay as needed
+
+    // Optionally, you can clean up the effect when the component unmounts
+    return () => clearTimeout(delay);
+  }, []);
   return (
 
-    <div className='bg-color-primary text-color-white'>
+    <div className='text-color-white'>
        <title>WanderSub</title>
       <link rel="stylesheet" href="css/main.css" />
        <link
@@ -382,14 +422,13 @@ const Hero3 = () => {
         crossOrigin="anonymous"
         referrerPolicy="no-referrer"
       />
+      <div className='bg-dm'>
       <header className="sticky top-0 z-50">
        <NavBar/>
       </header>
       <main>
         <section id="home" className="relative">
         
-          <div className="blob1" />
-          <div className="blob2" />
           <div className="container py-20">
             <div className="flex flex-col items-center z-20 md:flex-row">
               <div className="text-center mb-12 md:text-left md:w-1/2 md:pr-10">
@@ -400,22 +439,15 @@ const Hero3 = () => {
                 <button className="btn">Explore Now</button>
               </div>
               <div className="text-center mb-12 md:text-left md:w-1/2 md:pr-10">
-              <Image
-              src={logo}
-              alt="Logo"
-              width="500"
-              height="500"
-              className="cursor-pointer"
-              priority
-              />
+              
               </div> 
             </div>
           </div>
         </section>
         </main>
-       <h1 className='text-center '>Features</h1>
+      
         
-        <div className="gallery bg-galery bg-no repeat bg-cover">
+        {/* <div className="gallery bg-galery bg-no repeat bg-cover">
           
           <div className="left">
             <div className="detailsWrapper">
@@ -473,11 +505,71 @@ const Hero3 = () => {
               <div className="photo card bg-dl bg-cover bg-no repeat">Data Logging</div>
             </div>
           </div>
+        </div> */}
         </div>
-       
+        <div className="flex flex-col">
+      <div
+        ref={missionRef}
+        className={`text-gray-600 pl-10 p-4 ${fadeIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-1rem]'} transition-opacity transform ease-in-out duration-500`}
+        style={{ width: '100%', maxWidth: '100%', transition: 'width 0.5s ease-in-out' }}
+      >
+        <h2 className="text-2xl font-bold">Mission</h2>
+        <p className="mission-section">
+            <span>Your</span> <span>mission</span> <span>statement</span> <span>goes</span> <span>here.</span>
+            {/* Add more words as needed */}
+          </p>
+      </div>
+      <div
+        ref={visionRef}
+        className={`text-gray-600 pr-10 p-4 md:text-right  ${fadeIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[1rem]'} transition-opacity transform ease-in-out duration-500`}
+        style={{ width: '100%', maxWidth: '100%', transition: 'width 0.5s ease-in-out' }}
+      >
+        <h2 className="text-2xl font-bold">Vision</h2>
+        <p className="vision-section">
+            <span>Your</span> <span>vision</span> <span>statement</span> <span>goes</span> <span>here.</span>
+            {/* Add more words as needed */}
+          </p>
+      </div>
+   
+    
+
+    <ProductComponent imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+    <ProductComponent1 imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+         <ProductComponent imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+    <ProductComponent1 imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+         <ProductComponent imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+    <ProductComponent1 imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+         <ProductComponent imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+    <ProductComponent1 imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+         <ProductComponent imageSrc="/i1.png"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+    <ProductComponent1 imageSrc="image1.jpg"
+        title="Blue Dress v2"
+        description="Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci. Pellentesque dictum malesuada cubilia faucibus dignissim mi nascetur senectus, augue ad libero efficitur dolor duis lobortis, non etiam sociosqu maximus enim mus natoque."/>
+    </div>
+
+
         <Footer/>
         
     
+   
       </div>
   )
 }
