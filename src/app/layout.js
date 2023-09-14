@@ -26,6 +26,8 @@ import { AuthProvider } from 'src/components/components/AuthProvider';
 import createClient from '../../src/lib/supabase-server';
 
 import 'src/styles/globals.css';
+import Footer from '@/components/components/Footer';
+import NavBar from '@/components/components/Navbar';
 
 // do not cache this layout
 export const revalidate = 0;
@@ -41,6 +43,7 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
+     
       <body>
       
       {/* <HeroSection /> */}
@@ -58,9 +61,10 @@ export default async function RootLayout({ children }) {
         <AuthProvider accessToken={accessToken}>
         {children}</AuthProvider>
         </main>
-        {/* <Footer/> */}
+        
         </>
       </body>
+      <Footer/>
     </html>
   );
 }

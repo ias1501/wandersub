@@ -363,7 +363,7 @@ import "./nav.css";
 		faSolid.classList.toggle('fa-xmark');
 	  }
 	return (
-	 <div>
+	 <div >
 		 <nav className=" nav container flex justify-between items-center">
           <div className="py-5 text-color-secondary font-bold text-3xl">
             <a href="#home">
@@ -378,7 +378,7 @@ import "./nav.css";
 				   </Link>
               </li>
               <li>
-              <Link href="#about" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
+              <Link href="/about" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
 					 Team
  				   </Link>
               </li>
@@ -388,14 +388,16 @@ import "./nav.css";
  				   </Link>
               </li>
               <li>
-              <Link href="#contactus" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
+              <Link href="/Contact" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
 					 Contactus
  				   </Link>
               </li>
               
               <li>
                 <button className="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200">
-                  Login
+                <Link href="/auth/signin" onClick={() => setNavbar(!navbar)} className="hover:text-color-secondary ease-in duration-200">
+					 Login
+ 				   </Link>
                 </button>
               </li>
             </ul>

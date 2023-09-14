@@ -566,7 +566,7 @@ const Hero3 = () => {
     </div>
 
 
-        <Footer/>
+    
         
     
    
