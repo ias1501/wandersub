@@ -2,14 +2,14 @@
 import { useParams, useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
-import Ph from '@/components/parameters/Ph';
-import Temp from '@/components/parameters/Temp';
-import Turb from '@/components/parameters/Turb';
-import Alreco from '@/components/parameters/Alreco';
-import Rovstats from '@/components/parameters/Rovstats';
-import Tds from '@/components/parameters/Tds';
-import Sidebar from '@/components/sidebar';
-import Reletpos from '@/components/parameters/Reletpos';
+import Ph from '../../../components/components/parameters/Ph';
+import Temp from '../../../components/components/parameters/Temp';
+import Turb from '../../../components/components/parameters/Turb';
+import Alreco from '../../../components/components/parameters/Alreco';
+import Rovstats from '../../../components/components/parameters/rovstats';
+import Tds from '../../../components/components/parameters/Tds';
+import Sidebar from '../../../components/components/sidebar';
+import Reletpos from '../../../components/components/parameters/reletpos';
 
 
 // const tabs = ["ph","tds"];

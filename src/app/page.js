@@ -329,7 +329,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './hero3.css';
 import NavBar from '@/components/components/Navbar';
-import logo from '../../public/SAVE_20230909_205709-removebg-preview.png';
+
 import Image from 'next/image';
 import Footer from '@/components/components/Footer';
 import { FaFacebook, FaDiscord, FaTwitter, FaGithub, FaDribbble } from 'react-icons/fa';
