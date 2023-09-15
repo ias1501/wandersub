@@ -17,7 +17,8 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="bg-gray-300 text-white w-64 p-4 flex flex-col h-screen">
+    <div className="text-white w-64 p-4 flex flex-col h-screen " style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+  }}>
     {/* Company Name and Logo in a Row */}
     <div className="flex items-center mb-4">
       <img src={"/logo1.png"} alt="Company Logo" className="w-16 h-16 mr-2" />
@@ -27,7 +28,7 @@ const Sidebar = () => {
     {/* Main Navigation */}
     <ul className="flex-1">
       <li className="mb-4">
-        <a href="#" className="text-gray-600 hover:text-blue-600 flex items-center">
+        <a href="#" className="text-gray-200 hover:text-blue-600 flex items-center">
           <HomeIcon className="w-5 h-5 mr-2" />
           Dashboard
         </a>
@@ -35,7 +36,7 @@ const Sidebar = () => {
       <li className="mb-4">
         <a
           href="#"
-          className={`text-gray-600 hover:text-blue-600 flex items-center ${
+          className={`text-gray-200 hover:text-blue-600 flex items-center ${
             showSubsections ? 'bg-gray-400' : ''
           }`}
           onClick={toggleSubsections}
@@ -48,17 +49,17 @@ const Sidebar = () => {
         {showSubsections && (
           <ul className="ml-4">
             <li className="mb-4">
-              <a href="#" className="text-gray-600 hover:text-blue-600">
+              <a href="#" className="text-gray-200 hover:text-blue-600">
                 pH
               </a>
             </li>
             <li className="mb-4">
-              <a href="#" className="text-gray-600 hover:text-blue-600">
+              <a href="#" className="text-gray-200 hover:text-blue-600">
                 TDS
               </a>
             </li>
             <li className="mb-4">
-              <a href="#" className="text-gray-600 hover:text-blue-600">
+              <a href="#" className="text-gray-200 hover:text-blue-600">
                 Turbidity
               </a>
             </li>
@@ -66,13 +67,13 @@ const Sidebar = () => {
         )}
       </li>
       <li className="mb-4">
-        <a href="#" className="text-gray-600 hover:text-blue-600 flex items-center">
+        <a href="#" className="text-gray-200 hover:text-blue-600 flex items-center">
           <TemplateIcon className="w-5 h-5 mr-2" />
           ROV statistics
         </a>
       </li>
       <li className="mb-4">
-        <a href="#" className="text-gray-600 hover:text-blue-600 flex items-center">
+        <a href="#" className="text-gray-200 hover:text-blue-600 flex items-center">
           <BadgeCheckIcon className="w-5 h-5 mr-2" />
           Relative Positioning
         </a>
