@@ -525,54 +525,64 @@ const Hero3 = () => {
         className={`text-gray-600 pr-10 p-4 md:text-right  ${fadeIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[1rem]'} transition-opacity transform ease-in-out duration-500`}
         style={{ width: '100%', maxWidth: '100%', transition: 'width 0.5s ease-in-out' }}
       >
-        <h2 className="text-2xl font-bold">Our Vision</h2>
+        <h2 className="flex text-2xl font-bold justify-center">Our Vision</h2>
         <div className="grid grid-cols-5 gap-4 justify-center">
   {/* Card 1 */}
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">1.</div>
-    <div className="text-xs leading-tight">Innovative ROV Solutions: Develop state-of-the-art remotely operated vehicles (ROVs) equipped with advanced sensors and communication systems to enable safe and efficient exploration of underwater environments.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Innovative ROV Solutions: </div>
+    <div className="text-xs leading-tight">Develop state-of-the-art remotely operated vehicles (ROVs) equipped with advanced sensors and communication systems to enable safe and efficient exploration of underwater environments.</div>
   </div>
 
   {/* Repeat the structure for the remaining cards */}
   
   {/* Card 2 */}
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">2.</div>
-    <div className="text-xs leading-tight">Environmental Conservation: Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Environmental Conservation:</div>
+    <div className="text-xs leading-tight"> Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
   </div>
 
   {/* Card 3 */}
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">3.</div>
-    <div className="text-xs leading-tight">Education and Outreach: Foster a deeper connection between people and the underwater world by providing educational resources and engaging the public in underwater exploration.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Education and Outreach: .</div>
+    <div className="text-xs leading-tight">Foster a deeper connection between people and the underwater world by providing educational resources and engaging the public in underwater exploration.</div>
   </div>
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">2.</div>
-    <div className="text-xs leading-tight">Environmental Conservation: Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Industry Collaboration:</div>
+    <div className="text-xs leading-tight">Collaborate with industries such as marine biology, offshore energy, and underwater archaeology to provide ROV solutions that meet their specific needs.</div>
   </div>
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">2.</div>
-    <div className="text-xs leading-tight">Environmental Conservation: Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Safety and Efficiency:</div>
+    <div className="text-xs leading-tight">Prioritize the safety of our equipment and operators while maximizing the efficiency of underwater missions.</div>
   </div>
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">2.</div>
-    <div className="text-xs leading-tight">Environmental Conservation: Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Global Impact: </div>
+    <div className="text-xs leading-tight">Extend our reach to contribute to international efforts to preserve and protect the world's oceans and freshwater bodies.</div>
   </div>
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">2.</div>
-    <div className="text-xs leading-tight">Environmental Conservation: Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Inclusive Exploration: </div>
+    <div className="text-xs leading-tight">Promote diversity and inclusion in the field of underwater exploration, ensuring that all voices and perspectives are heard..</div>
   </div>
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">2.</div>
-    <div className="text-xs leading-tight">Environmental Conservation: Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Continuous Innovation:</div>
+    <div className="text-xs leading-tight">Stay at the forefront of ROV technology through ongoing research and development, adapting to emerging challenges and opportunities in underwater exploration.</div>
   </div>
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">2.</div>
-    <div className="text-xs leading-tight">Environmental Conservation: Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Economic Growth:</div>
+    <div className="text-xs leading-tight">Drive economic growth by providing ROV services and solutions that benefit industries and research organizations worldwide.</div>
   </div>
-  <div className="bg-gray-100 p-4 rounded-lg shadow-md text-center">
-    <div className="font-bold text-sm mb-2">2.</div>
-    <div className="text-xs leading-tight">Environmental Conservation: Utilize our technology to support scientific research, conservation efforts, and sustainable practices in ocean and freshwater ecosystems.</div>
+  <div className=" p-4 rounded-lg shadow-md text-center" style={{background: 'linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))',
+}}>
+    <div className="font-bold text-sm mb-2">Customer Satisfaction: </div>
+    <div className="text-xs leading-tight">Deliver exceptional value and service to our customers, exceeding their expectations in every aspect of our work.</div>
   </div>
 
   {/* Continue with the remaining cards */}
@@ -581,8 +591,8 @@ const Hero3 = () => {
 
 
       </div>
-   
-    <p>
+   <h1 className=' features flex text-black font-bold font-5xl justify-center items-center mt-6 '> Features</h1>
+    <p className='features text-black flex justify-center items-center'>
     Introducing our cutting-edge underwater Remotely Operated Vehicle (ROV), designed for unparalleled exploration beneath the waves:
     </p>
 
@@ -613,7 +623,7 @@ const Hero3 = () => {
          <ProductComponent imageSrc="/i1.png"
         title="Blue Dress v2"
         description="Our ROV's streamlined frame minimizes drag, ensuring optimal maneuverability and efficiency. Glide through the water with grace and precision."/>
-   <p>
+   <p  className='features text-black flex justify-center items-center'> 
    Unleash the potential of underwater exploration with our state-of-the-art ROV, setting new standards for versatility, performance, and imaging quality in the world beneath the surface. Explore, discover, and document the mysteries of the deep with confidence.
    </p>
     </div>
