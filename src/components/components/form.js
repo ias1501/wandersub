@@ -33,7 +33,7 @@ function Fm() {
 
   return (
     <div>
-    
+    <h1 className='text-bold text-6xl items-center justify-center'>Welcome!</h1>
       <div className="container" id="container">
         <div className="form-container sign-up-container">
           <form action="#">
